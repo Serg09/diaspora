@@ -88,7 +88,8 @@ app.views.CommentStream = app.views.Base.extend({
       success : function(resp){
         self.model.set({
           comments : resp.models,
-          all_comments_loaded : true
+          //all_comments_loaded : true
+          all_description_loaded : true
         });
 
         self.model.trigger("commentsExpanded", self);
