@@ -148,6 +148,7 @@
       if ( commentCount > 3 ) {
         var lastComment = commentsContainer.find("li:nth-child("+(commentCount-3)+")");
         $("html,body").animate({
+          //scrollTop: lastComment.offset().top
           scrollTop: lastComment.offset().top
         }, 1000);
       }

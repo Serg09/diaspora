@@ -58,15 +58,16 @@ gem "compass-rails",  "2.0.5"
 gem "sass-rails",     "5.0.4"
 gem "autoprefixer-rails", "6.3.3.1"
 gem "bootstrap-switch-rails", "3.3.3"
+gem "pg",     "0.18.4"
 
 # Database
 
 group :mysql, optional: true do
   gem "mysql2", "0.4.3"
 end
-group :postgresql, optional: true do
-  gem "pg",     "0.18.4"
-end
+# group :postgresql, optional: true do
+#   gem "pg",     "0.18.4"
+# end
 
 gem "activerecord-import", "0.11.0"
 
