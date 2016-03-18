@@ -8,7 +8,7 @@ gem "responders", "2.1.1"
 
 # Appserver
 
-gem "unicorn", "5.0.1"
+gem "unicorn", "5.0.1", require: false
 
 # Federation
 
@@ -28,7 +28,7 @@ gem "devise-token_authenticatable", "~> 0.4.0"
 
 # Captcha
 
-gem "simple_captcha2", "0.4.0"
+gem "simple_captcha2", "0.4.0", require: "simple_captcha"
 
 # Background processing
 
@@ -49,7 +49,7 @@ gem "configurate", "0.3.1"
 
 # Cross-origin resource sharing
 
-gem "rack-cors", "0.4.0"
+gem "rack-cors", "0.4.0", require: "rack/cors"
 
 # CSS
 
@@ -157,7 +157,7 @@ gem "active_model_serializers", "0.9.4"
 
 # XMPP chat dependencies
 gem "diaspora-vines",             "~> 0.2.0.develop"
-gem "rails-assets-diaspora_jsxc", "~> 0.1.5.develop"
+gem "rails-assets-diaspora_jsxc", "~> 0.1.5.develop", source: "https://rails-assets.org"
 
 # Tags
 
@@ -165,7 +165,7 @@ gem "acts-as-taggable-on", "3.5.0"
 
 # URIs and HTTP
 
-gem "addressable",        "2.3.8"
+gem "addressable",        "2.3.8", require: "addressable/uri"
 gem "faraday",            "0.9.2"
 gem "faraday_middleware", "0.10.0"
 gem "faraday-cookie_jar", "0.0.6"
@@ -181,11 +181,11 @@ gem "rails-timeago",           "2.11.0"
 
 # Logging
 
-gem "logging-rails", "0.5.0"
+gem "logging-rails", "0.5.0", require: "logging/rails"
 
 # Reading and writing zip files
 
-gem "rubyzip", "1.1.7"
+gem "rubyzip", "1.1.7", require: "zip"
 
 # Prevent occasions where minitest is not bundled in
 # packaged versions of ruby. See following issues/prs:
@@ -211,7 +211,7 @@ group :production do # we don"t install these on travis to speed up test runs
   # Analytics
 
   gem "rack-google-analytics", "1.2.0"
-  gem "rack-piwik",            "0.3.0"
+  gem "rack-piwik",            "0.3.0",  require: "rack/piwik"
 
   # Click-jacking protection
 
@@ -223,12 +223,12 @@ group :production do # we don"t install these on travis to speed up test runs
 
   # Redirects
 
-  gem "rack-rewrite", "1.5.1"
-  gem "rack-ssl",     "1.4.1"
+  gem "rack-rewrite", "1.5.1", require: false
+  gem "rack-ssl",     "1.4.1", require: "rack/ssl"
 
   # Third party asset hosting
 
-  gem "asset_sync", "1.1.0"
+  gem "asset_sync", "1.1.0", require: false
 end
 
 group :development do
@@ -237,9 +237,9 @@ group :development do
   gem "guard-jshintrb", "1.1.1"
   gem "guard-rspec",    "4.6.4"
   gem "guard-rubocop",  "1.2.0"
-  gem "guard",          "2.13.0"
-  gem "rb-fsevent",     "0.9.7"
-  gem "rb-inotify",     "0.9.7"
+  gem "guard",          "2.13.0", require: false
+  gem "rb-fsevent",     "0.9.7", require: false
+  gem "rb-inotify",     "0.9.7", require: false
 
   # Linters
   gem "jshintrb",       "0.3.0"
@@ -249,7 +249,7 @@ group :development do
   gem "pronto-jshint",  "0.5.0"
   gem "pronto-rubocop", "0.5.0"
   gem "pronto-haml",    "0.5.0"
-  gem "pronto-scss",    "0.5.0"
+  gem "pronto-scss",    "0.5.0", require: false
 
   # Preloading environment
 
@@ -263,7 +263,7 @@ group :development do
   gem "pry-byebug"
 
   # test coverage
-  gem "simplecov", "0.11.2"
+  gem "simplecov", "0.11.2", require: false
 
   gem "turbo_dev_assets", "0.0.2"
 end
@@ -273,7 +273,7 @@ group :test do
 
   gem "fixture_builder",   "0.4.1"
   gem "fuubar",            "2.0.0"
-  gem "rspec-instafail",   "0.4.0"
+  gem "rspec-instafail",   "0.4.0", require: false
   gem "test_after_commit", "0.4.2"
 
   # Cucumber (integration tests)
@@ -282,14 +282,14 @@ group :test do
   gem "database_cleaner" ,  "1.5.1"
   gem "selenium-webdriver", "2.47.1"
 
-  gem "cucumber-api-steps", "0.13"
+  gem "cucumber-api-steps", "0.13", require: false
   gem "json_spec", "1.1.4"
 
   # General helpers
 
   gem "factory_girl_rails", "4.6.0"
   gem "timecop",            "0.8.0"
-  gem "webmock",            "1.22.6"
+  gem "webmock",            "1.22.6", require: false
   gem "shoulda-matchers",   "3.1.1"
 
   gem "diaspora_federation-test", "0.0.12"
@@ -300,12 +300,12 @@ group :development, :test do
   gem "rspec-rails", "3.4.2"
 
   # Cucumber (integration tests)
-  gem "cucumber-rails", "1.4.3"
+  gem "cucumber-rails", "1.4.3", require: false
 
   # Jasmine (client side application tests (JS))
   gem "jasmine",                   "2.4.0"
   gem "jasmine-jquery-rails",      "2.0.3"
-  gem "rails-assets-jasmine-ajax", "3.2.0"
+  gem "rails-assets-jasmine-ajax", "3.2.0", source: "https://rails-assets.org"
   gem "sinon-rails",               "1.15.0"
 
   # silence assets
